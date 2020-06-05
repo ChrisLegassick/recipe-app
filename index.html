@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Recipe Cookbook</title>
+  </head>
+  <body>
+    <div class="search-container">
+      <h1>Recipe Cookbook</h1>
+      <div>
+        <form id="submit">
+          <label for="search">Search for a recipe</label>
+          <input
+            type="text"
+            name="search"
+            id="search"
+            placeholder="e.g lasagna"
+          />
+          <button type="submit" class="search-btn">Search</button>
+        </form>
+        <button class="btn" id="getAll">Get all recipes</button>
+        <button class="btn" id="random">Get random recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-heading" id="recipeHeading"></div>
+    <div class="recipe-output" id="recipeOutput"></div>
+    <div class="single-recipe" id="singleRecipe"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
