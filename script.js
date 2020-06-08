@@ -26,6 +26,7 @@ recipeOutput.addEventListener('click', e => {
 
 function searchRecipe(e) {
   e.preventDefault();
+  singleRecipe.innerHTML = '';
 
   const value = search.value;
 
@@ -90,7 +91,12 @@ function getRandomRecipe() {
       singleRecipe.innerHTML = `
         <div class="single-recipe">
           <p>${recipe.name}</p>
-          <p>${recipe.instructions}</p>
+          <p>Instructions:</p>
+          <ul>
+            ${recipe.instructions
+              .map(instruction => `<li>${instruction}</li>`)
+              .join('')}
+          </ul>
           <p>Ingredients:</p>
           <ul>
             ${recipe.ingredients
@@ -111,7 +117,12 @@ function getRecipeById(recipeID) {
       singleRecipe.innerHTML = `
         <div class="single-recipe">
           <p>${recipe.name}</p>
-          <p>${recipe.instructions}</p>
+          <p>Instructions:</p>
+          <ul>
+            ${recipe.instructions
+              .map(instruction => `<li>${instruction}</li>`)
+              .join('')}
+          </ul>
           <p>Ingredients:</p>
           <ul>
             ${recipe.ingredients
