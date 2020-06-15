@@ -44,11 +44,11 @@ function searchRecipe(e) {
         recipeOutput.innerHTML = recipe
           .map(
             recipe => `
-          <div class="recipe">
+          <button class="recipe">
             <div class="recipe-info" data-recipeID="${recipe._id}">
               <p>${recipe.name}</p>
             </div>
-          </div>
+          </button>
         `
           )
           .join('');
