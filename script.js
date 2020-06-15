@@ -24,21 +24,6 @@ recipeOutput.addEventListener('click', e => {
   }
 });
 
-recipeOutput.addEventListener('touchend', e => {
-  const recipeInfo = e.path.find(item => {
-    if (item.classList) {
-      return item.classList.contains('recipe-info');
-    } else {
-      return false;
-    }
-  });
-
-  if (recipeInfo) {
-    const recipeID = recipeInfo.getAttribute('data-recipeid');
-    getRecipeById(recipeID);
-  }
-});
-
 function searchRecipe(e) {
   e.preventDefault();
   singleRecipe.innerHTML = '';

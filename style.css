@@ -37,6 +37,10 @@ body {
   font-size: 1.5rem;
 }
 
+.recipe-info {
+  cursor: pointer;
+}
+
 .single-recipe {
   margin: auto;
   display: flex;
@@ -52,4 +56,5 @@ body {
 
 .single-recipe ul {
   padding-left: 0;
+  list-style: none;
 }
