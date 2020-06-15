@@ -10,16 +10,16 @@ submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
 recipeOutput.addEventListener('click', e => {
-  const recipeInfo = e.path.find(item => {
+  const recipe = e.path.find(item => {
     if (item.classList) {
-      return item.classList.contains('recipe-info');
+      return item.classList.contains('recipe');
     } else {
       return false;
     }
   });
 
-  if (recipeInfo) {
-    const recipeID = recipeInfo.getAttribute('data-recipeid');
+  if (recipe) {
+    const recipeID = recipe.getAttribute('data-recipeid');
     getRecipeById(recipeID);
   }
 });
@@ -44,10 +44,8 @@ function searchRecipe(e) {
         recipeOutput.innerHTML = recipe
           .map(
             recipe => `
-          <div class="recipe">
-            <div class="recipe-info" data-recipeID="${recipe._id}">
-              <p>${recipe.name}</p>
-            </div>
+          <div class="recipe" data-recipeID="${recipe._id}">
+            <p>${recipe.name}</p>
           </div>
         `
           )
@@ -69,10 +67,8 @@ function getAllRecipes() {
       recipeOutput.innerHTML = recipe
         .map(
           recipe => `
-          <div class="recipe">
-            <div class="recipe-info" data-recipeID="${recipe._id}">
-              <p>${recipe.name}</p>
-            </div>
+          <div class="recipe" data-recipeID="${recipe._id}">
+            <p>${recipe.name}</p>
           </div>
         `
         )
