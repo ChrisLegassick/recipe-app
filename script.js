@@ -91,16 +91,16 @@ function getRandomRecipe() {
       singleRecipe.innerHTML = `
         <div class="single-recipe">
           <p>${recipe.name}</p>
-          <p>Instructions:</p>
-          <ul>
-            ${recipe.instructions
-              .map(instruction => `<li>${instruction}</li>`)
-              .join('')}
-          </ul>
           <p>Ingredients:</p>
           <ul>
             ${recipe.ingredients
               .map(ingredient => `<li>${ingredient}</li>`)
+              .join('')}
+          </ul>
+          <p>Instructions:</p>
+          <ul>
+            ${recipe.instructions
+              .map(instruction => `<li>${instruction}</li>`)
               .join('')}
           </ul>
         </div>
@@ -117,16 +117,16 @@ function getRecipeById(recipeID) {
       singleRecipe.innerHTML = `
         <div class="single-recipe">
           <p>${recipe.name}</p>
-          <p>Instructions:</p>
-          <ul>
-            ${recipe.instructions
-              .map(instruction => `<li>${instruction}</li>`)
-              .join('')}
-          </ul>
           <p>Ingredients:</p>
           <ul>
             ${recipe.ingredients
               .map(ingredient => `<li>${ingredient}</li>`)
+              .join('')}
+          </ul>
+          <p>Instructions:</p>
+          <ul>
+            ${recipe.instructions
+              .map(instruction => `<li>${instruction}</li>`)
               .join('')}
           </ul>
         </div>
