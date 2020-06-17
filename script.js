@@ -9,22 +9,9 @@ const singleRecipe = document.getElementById('singleRecipe');
 submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
-// recipeOutput.addEventListener('click', e => {
-//   const recipe = e.path.find(item => {
-//     if (item.classList) {
-//       return item.classList.contains('recipe');
-//     } else {
-//       return false;
-//     }
-//   });
-
-//   if (recipe) {
-//     const recipeID = recipe.getAttribute('data-recipeid');
-//     getRecipeById(recipeID);
-//   }
-// });
-recipeOutput.addEventListener('click', function(e) {
-  const recipe = e.path.find(item => {
+recipeOutput.addEventListener('click', e => {
+  const path = e.path || (e.composedPath && e.composedPath());
+  const recipe = path.find(item => {
     if (item.classList) {
       return item.classList.contains('recipe');
     } else {
