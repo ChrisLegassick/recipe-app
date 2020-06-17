@@ -9,7 +9,7 @@ const singleRecipe = document.getElementById('singleRecipe');
 submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
-recipeOutput.addEventListener('click', e => {
+document.body.addEventListener('click', e => {
   const recipe = e.path.find(item => {
     if (item.classList) {
       return item.classList.contains('recipe');
@@ -23,8 +23,6 @@ recipeOutput.addEventListener('click', e => {
     getRecipeById(recipeID);
   }
 });
-
-function test() {}
 
 function searchRecipe(e) {
   e.preventDefault();
