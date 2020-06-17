@@ -25,7 +25,7 @@ recipeOutput.addEventListener(
       getRecipeById(recipeID);
     }
   },
-  false
+  true
 );
 
 function searchRecipe(e) {
