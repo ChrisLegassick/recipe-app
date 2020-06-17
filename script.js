@@ -24,6 +24,8 @@ recipeOutput.addEventListener('click', e => {
   }
 });
 
+function test() {}
+
 function searchRecipe(e) {
   e.preventDefault();
   singleRecipe.innerHTML = '';
