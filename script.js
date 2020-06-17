@@ -9,24 +9,34 @@ const singleRecipe = document.getElementById('singleRecipe');
 submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
-recipeOutput.addEventListener(
-  'click',
-  e => {
-    const recipe = e.path.find(item => {
-      if (item.classList) {
-        return item.classList.contains('recipe');
-      } else {
-        return false;
-      }
-    });
+// recipeOutput.addEventListener('click', e => {
+//   const recipe = e.path.find(item => {
+//     if (item.classList) {
+//       return item.classList.contains('recipe');
+//     } else {
+//       return false;
+//     }
+//   });
 
-    if (recipe) {
-      const recipeID = recipe.getAttribute('data-recipeid');
-      getRecipeById(recipeID);
+//   if (recipe) {
+//     const recipeID = recipe.getAttribute('data-recipeid');
+//     getRecipeById(recipeID);
+//   }
+// });
+recipeOutput.addEventListener('click', function(e) {
+  const recipe = e.path.find(item => {
+    if (item.classList) {
+      return item.classList.contains('recipe');
+    } else {
+      return false;
     }
-  },
-  true
-);
+  });
+
+  if (recipe) {
+    const recipeID = recipe.getAttribute('data-recipeid');
+    getRecipeById(recipeID);
+  }
+});
 
 function searchRecipe(e) {
   e.preventDefault();
