@@ -10,6 +10,13 @@ submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
 recipeOutput.addEventListener('click', e => {
+  myFunction(e);
+});
+recipeOutput.addEventListener('touchend', e => {
+  myFunction(e);
+});
+
+function myFunction(e) {
   const recipe = e.path.find(item => {
     if (item.classList) {
       return item.classList.contains('recipe');
@@ -22,7 +29,7 @@ recipeOutput.addEventListener('click', e => {
     const recipeID = recipe.getAttribute('data-recipeid');
     getRecipeById(recipeID);
   }
-});
+}
 
 function searchRecipe(e) {
   e.preventDefault();
