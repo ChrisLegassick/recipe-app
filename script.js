@@ -9,7 +9,7 @@ const singleRecipe = document.getElementById('singleRecipe');
 submit.addEventListener('submit', searchRecipe);
 getAll.addEventListener('click', getAllRecipes);
 random.addEventListener('click', getRandomRecipe);
-document.addEventListener(
+recipeOutput.addEventListener(
   'click',
   e => {
     const recipe = e.path.find(item => {
